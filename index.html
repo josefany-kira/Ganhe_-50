@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganhe $50</title>
 
-  <!-- Metatags Open Graph para WhatsApp, Facebook, etc -->
+  <!-- Metatags Open Graph -->
   <meta property="og:title" content="Ganhe $50 agora! 🎉">
   <meta property="og:description" content="Você foi selecionado para receber $50 grátis. Clique e aproveite!">
   <meta property="og:image" content="https://josefany-kira.github.io/Ganhe_-50/thumb.jpg">
@@ -32,12 +32,12 @@
     .container {
       max-width: 600px;
       margin: 50px auto;
-      background: rgba(255, 255, 255, 0);
+      background: #ffffff; /* fundo branco */
       padding: 30px;
       border-radius: 10px;
-      box-shadow: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* sombra leve */
       text-align: center;
-      color: white;
+      color: #000000; /* texto preto */
     }
 
     .hidden {
@@ -117,7 +117,7 @@
     <div class="login-button" onclick="mostrarPagina('ByBit')">Iniciar sessão com ByBit</div> 
   </div>
 
-  <!-- Página Airtm -->
+  <!-- Airtm -->
   <div class="container hidden" id="airtm">
     <h2>Login Airtm</h2>
     <p>Inicia sessão com a tua conta Airtm para receber $50.</p>
@@ -134,7 +134,7 @@
     <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
   </div>
 
-  <!-- Página Wise -->
+  <!-- Wise -->
   <div class="container hidden" id="wise">
     <h2>Login Wise</h2>
     <p>Conecta a tua conta Wise e ganha $50.</p>
@@ -151,7 +151,7 @@
     <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
   </div>
 
-  <!-- Página PayPal -->
+  <!-- PayPal -->
   <div class="container hidden" id="PayPal">
     <h2>Login PayPal</h2>
     <p>Entra com a tua conta do PayPal para ganhares $50.</p>
@@ -167,8 +167,8 @@
     </form>
     <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
   </div>
-  
-  <!-- Página ByBit -->
+
+  <!-- ByBit -->
   <div class="container hidden" id="ByBit">
     <h2>Login ByBit</h2>
     <p>Entra com a tua conta do ByBit para ganhares $50.</p>
@@ -187,8 +187,8 @@
 
   <script>
     function mostrarPagina(id) {
-      const secoes = ["home", "airtm", "wise", "PayPal", "ByBit"];
-      secoes.forEach(sec => {
+      const seções = ["home", "airtm", "wise", "PayPal", "ByBit"];
+      seções.forEach(sec => {
         document.getElementById(sec).classList.add("hidden");
       });
       document.getElementById(id).classList.remove("hidden");
@@ -200,4 +200,4 @@
   </script>
 
 </body>
-        </html>
+</html>
