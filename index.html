@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganhe $50</title>
-<!-- Metatags Open Graph para WhatsApp, Facebook, etc -->
+
+  <!-- Metatags Open Graph para WhatsApp, Facebook, etc -->
   <meta property="og:title" content="Ganhe $50 agora! 🎉">
   <meta property="og:description" content="Você foi selecionado para receber $50 grátis. Clique e aproveite!">
   <meta property="og:image" content="https://josefany-kira.github.io/Ganhe_-50/thumb.jpg">
@@ -13,14 +14,19 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+
+    body {
       background-image: url('carteiras.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center center;
       background-repeat: no-repeat;
-      height: 100vh;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
     }
 
     .container {
@@ -31,6 +37,7 @@
       border-radius: 10px;
       box-shadow: none;
       text-align: center;
+      color: white;
     }
 
     .hidden {
@@ -180,8 +187,8 @@
 
   <script>
     function mostrarPagina(id) {
-      const seções = ["home", "airtm", "wise", "PayPal", "ByBit"];
-      seções.forEach(sec => {
+      const secoes = ["home", "airtm", "wise", "PayPal", "ByBit"];
+      secoes.forEach(sec => {
         document.getElementById(sec).classList.add("hidden");
       });
       document.getElementById(id).classList.remove("hidden");
